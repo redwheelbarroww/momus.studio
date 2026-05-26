@@ -460,6 +460,139 @@ h3 {
   text-transform: uppercase;
 }
 
+.paid-header {
+  position: static;
+}
+
+.paid-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.75fr);
+  gap: clamp(34px, 6vw, 80px);
+  align-items: center;
+  min-height: calc(100vh - 68px);
+  padding: 68px clamp(24px, 6vw, 88px);
+}
+
+.paid-copy {
+  max-width: 860px;
+}
+
+.paid-proof-panel {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.paid-proof-panel h2 {
+  margin-bottom: 24px;
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.paid-proof-panel ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 20px;
+  color: #3f443f;
+  line-height: 1.5;
+}
+
+.paid-proof-strip,
+.paid-grid,
+.paid-process > div {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.paid-proof-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 clamp(24px, 6vw, 88px) 72px;
+}
+
+.paid-proof-strip article,
+.paid-grid article,
+.paid-process article {
+  min-width: 0;
+  padding: 24px;
+  background: var(--panel);
+}
+
+.paid-proof-strip span,
+.paid-process span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.paid-proof-strip p,
+.paid-grid p,
+.paid-process p,
+.paid-offer p,
+.paid-problem > p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.paid-proof-strip a {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.paid-problem,
+.paid-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+  padding: 72px clamp(24px, 6vw, 88px);
+  border-top: 1px solid var(--line);
+}
+
+.paid-problem > p {
+  font-size: 20px;
+}
+
+.paid-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 clamp(24px, 6vw, 88px) 72px;
+}
+
+.paid-process {
+  padding: 72px clamp(24px, 6vw, 88px);
+  border-top: 1px solid var(--line);
+  background: #fbfaf7;
+}
+
+.paid-process > div {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.paid-offer {
+  background: #181816;
+  color: var(--paper);
+}
+
+.paid-offer .section-label {
+  color: #dbc06d;
+}
+
+.paid-offer .button {
+  justify-self: start;
+  align-self: end;
+  border-color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
+}
+
 .deliverables {
   padding: 86px clamp(24px, 6vw, 88px);
 }
@@ -863,12 +996,15 @@ textarea {
   }
 
   .hero,
+  .paid-hero,
   .intro,
   .fit,
   .proof-path,
   .case-promo,
   .case-summary,
-  .case-recommendations {
+  .case-recommendations,
+  .paid-problem,
+  .paid-offer {
     grid-template-columns: 1fr;
   }
 
@@ -915,7 +1051,10 @@ textarea {
   .trace-example,
   .case-metrics,
   .case-trace-grid,
-  .case-list {
+  .case-list,
+  .paid-proof-strip,
+  .paid-grid,
+  .paid-process > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -979,13 +1118,22 @@ textarea {
   .fit,
   .closing,
   .page-shell,
+  .paid-hero,
   .proof-path,
   .comparison,
   .next-steps,
   .case-promo,
   .case-summary,
-  .case-recommendations {
+  .case-recommendations,
+  .paid-problem,
+  .paid-process,
+  .paid-offer {
     padding: 58px 18px;
+  }
+
+  .paid-proof-strip,
+  .paid-grid {
+    margin: 0 18px 58px;
   }
 
   .page-hero {
@@ -1005,7 +1153,10 @@ textarea {
   .trace-example,
   .case-metrics,
   .case-trace-grid,
-  .case-list {
+  .case-list,
+  .paid-proof-strip,
+  .paid-grid,
+  .paid-process > div {
     grid-template-columns: 1fr;
   }
 
@@ -1043,8 +1194,12 @@ textarea {
   .case-metrics,
   .case-table-section,
   .case-trace,
+  .paid-proof-panel,
   .case-trace-grid,
   .case-list,
+  .paid-proof-strip,
+  .paid-grid,
+  .paid-process > div,
   .report-body,
   .report-body section,
   .finding-list,
@@ -1065,7 +1220,11 @@ textarea {
   .case-summary h2,
   .case-table-section h2,
   .case-trace h2,
-  .case-recommendations h2 {
+  .case-recommendations h2,
+  .paid-hero h1,
+  .paid-proof-panel h2,
+  .paid-problem h2,
+  .paid-offer h2 {
     max-width: 10ch;
     font-size: 31px;
     line-height: 1.05;
@@ -1078,7 +1237,10 @@ textarea {
   .trace-example div,
   .case-metrics div,
   .case-trace-grid article,
-  .case-list article {
+  .case-list article,
+  .paid-proof-strip article,
+  .paid-grid article,
+  .paid-process article {
     width: 100%;
     max-width: 100%;
   }
