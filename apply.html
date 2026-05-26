@@ -38,8 +38,8 @@
           <p class="section-label">Apply</p>
           <h2 id="form-title">Tell us what you want to stress-test.</h2>
           <p>
-            This static form creates an email draft with your answers. A proper form backend can be
-            wired before paid traffic starts.
+            Share the funnel, campaign, or offer you want reviewed. Momus Studio will follow up
+            with fit, scope, and next steps.
           </p>
         </div>
         <form id="beta-form" class="beta-form">
@@ -72,7 +72,7 @@
               <option value="$20k+">$20k+</option>
             </select>
           </label>
-          <button class="button primary" type="submit">Create application email</button>
+          <button class="button primary" type="submit">Send application</button>
           <p class="form-note" id="form-note" role="status"></p>
         </form>
       </section>
@@ -108,7 +108,7 @@
         ];
         const subject = encodeURIComponent("Synthetic Buyer Lab beta application");
         const body = encodeURIComponent(lines.join("\n"));
-        window.location.href = `mailto:hello@momus.studio?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:momusresearch@gmail.com?subject=${subject}&body=${body}`;
         note.textContent = "Opening your email app with the application details.";
       });
     </script>
