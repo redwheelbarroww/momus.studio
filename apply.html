@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apply for Beta Audit | Momus Studio</title>
+    <meta
+      name="description"
+      content="Apply for a Momus Studio Synthetic Buyer Lab beta audit."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Momus Studio home">
+        <span class="brand-mark">M</span>
+        <span>Momus Studio</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./sample-report.html">Sample</a>
+        <a href="./method.html">Method</a>
+        <a href="./apply.html">Apply</a>
+      </nav>
+    </header>
+
+    <main class="page-shell split-page">
+      <section class="page-hero compact-hero">
+        <p class="eyebrow">Beta audit</p>
+        <h1>Start with one funnel, one offer, and three competitors.</h1>
+        <p class="lede">
+          The beta audit is scoped for fast delivery: 25 to 50 synthetic buyer sessions, a concise
+          report, and a ranked action list. Starter beta price: $750.
+        </p>
+      </section>
+
+      <section class="form-section" aria-labelledby="form-title">
+        <div>
+          <p class="section-label">Apply</p>
+          <h2 id="form-title">Tell us what you want to stress-test.</h2>
+          <p>
+            This static form creates an email draft with your answers. A proper form backend can be
+            wired before paid traffic starts.
+          </p>
+        </div>
+        <form id="beta-form" class="beta-form">
+          <label>
+            Name
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Business or agency
+            <input name="business" required />
+          </label>
+          <label>
+            Website or funnel URL
+            <input name="url" type="url" placeholder="https://..." required />
+          </label>
+          <label>
+            What are you trying to improve?
+            <textarea name="goal" rows="4" required></textarea>
+          </label>
+          <label>
+            Monthly ad spend range
+            <select name="spend">
+              <option value="Not running ads yet">Not running ads yet</option>
+              <option value="$1k-$5k">$1k-$5k</option>
+              <option value="$5k-$20k">$5k-$20k</option>
+              <option value="$20k+">$20k+</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Create application email</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Momus Studio</span>
+      <nav aria-label="Footer navigation">
+        <a href="./sample-report.html">Sample report</a>
+        <a href="./method.html">Method</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </footer>
+
+    <script>
+      const form = document.querySelector("#beta-form");
+      const note = document.querySelector("#form-note");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const lines = [
+          "Synthetic Buyer Lab beta application",
+          "",
+          `Name: ${data.get("name")}`,
+          `Email: ${data.get("email")}`,
+          `Business or agency: ${data.get("business")}`,
+          `Website or funnel URL: ${data.get("url")}`,
+          `Monthly ad spend range: ${data.get("spend")}`,
+          "",
+          "What they want to improve:",
+          data.get("goal"),
+        ];
+        const subject = encodeURIComponent("Synthetic Buyer Lab beta application");
+        const body = encodeURIComponent(lines.join("\n"));
+        window.location.href = `mailto:hello@momus.studio?subject=${subject}&body=${body}`;
+        note.textContent = "Opening your email app with the application details.";
+      });
+    </script>
+  </body>
+</html>
