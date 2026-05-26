@@ -547,6 +547,7 @@ h3 {
 }
 
 .paid-problem,
+.paid-value,
 .paid-offer {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -558,6 +559,29 @@ h3 {
 
 .paid-problem > p {
   font-size: 20px;
+}
+
+.paid-value {
+  background: var(--panel);
+}
+
+.paid-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.paid-value-grid article {
+  min-width: 0;
+  padding: 22px;
+  background: #fbfaf7;
+}
+
+.paid-value-grid p {
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .paid-grid {
@@ -1004,6 +1028,7 @@ textarea {
   .case-summary,
   .case-recommendations,
   .paid-problem,
+  .paid-value,
   .paid-offer {
     grid-template-columns: 1fr;
   }
@@ -1054,6 +1079,7 @@ textarea {
   .case-list,
   .paid-proof-strip,
   .paid-grid,
+  .paid-value-grid,
   .paid-process > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1126,6 +1152,7 @@ textarea {
   .case-summary,
   .case-recommendations,
   .paid-problem,
+  .paid-value,
   .paid-process,
   .paid-offer {
     padding: 58px 18px;
@@ -1156,6 +1183,7 @@ textarea {
   .case-list,
   .paid-proof-strip,
   .paid-grid,
+  .paid-value-grid,
   .paid-process > div {
     grid-template-columns: 1fr;
   }
@@ -1199,6 +1227,7 @@ textarea {
   .case-list,
   .paid-proof-strip,
   .paid-grid,
+  .paid-value-grid,
   .paid-process > div,
   .report-body,
   .report-body section,
@@ -1224,6 +1253,7 @@ textarea {
   .paid-hero h1,
   .paid-proof-panel h2,
   .paid-problem h2,
+  .paid-value h2,
   .paid-offer h2 {
     max-width: 10ch;
     font-size: 31px;
@@ -1240,6 +1270,7 @@ textarea {
   .case-list article,
   .paid-proof-strip article,
   .paid-grid article,
+  .paid-value-grid article,
   .paid-process article {
     width: 100%;
     max-width: 100%;
