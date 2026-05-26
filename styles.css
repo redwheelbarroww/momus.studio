@@ -270,6 +270,82 @@ h3 {
   line-height: 1.45;
 }
 
+.proof-path,
+.comparison,
+.next-steps {
+  padding: 72px clamp(24px, 6vw, 88px);
+  border-top: 1px solid var(--line);
+  background: #fbfaf7;
+}
+
+.proof-path {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+}
+
+.proof-steps,
+.comparison-grid {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.proof-steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.proof-steps article,
+.comparison-grid div,
+.trace-example div {
+  min-width: 0;
+  padding: 22px;
+  background: var(--panel);
+}
+
+.proof-steps span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.proof-steps p,
+.comparison-grid p,
+.next-steps li,
+.trace-example p {
+  color: #3f443f;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.comparison h2,
+.next-steps h2 {
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.comparison-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.next-steps {
+  margin-top: 0;
+  background: transparent;
+}
+
+.next-steps ol {
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+  margin: 26px 0 0;
+  padding-left: 24px;
+}
+
 .deliverables {
   padding: 86px clamp(24px, 6vw, 88px);
 }
@@ -526,6 +602,22 @@ th {
   gap: 16px;
 }
 
+.trace-example {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-bottom: 22px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.trace-example h2 {
+  grid-column: 1 / -1;
+  padding: 22px 22px 0;
+  background: var(--panel);
+  font-size: clamp(28px, 3vw, 40px);
+}
+
 blockquote {
   margin: 0;
   padding: 22px;
@@ -658,7 +750,8 @@ textarea {
 
   .hero,
   .intro,
-  .fit {
+  .fit,
+  .proof-path {
     grid-template-columns: 1fr;
   }
 
@@ -698,6 +791,12 @@ textarea {
   .two-column,
   .use-case-band {
     grid-template-columns: 1fr;
+  }
+
+  .proof-steps,
+  .comparison-grid,
+  .trace-example {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mini-outcomes {
@@ -759,7 +858,10 @@ textarea {
   .deliverables,
   .fit,
   .closing,
-  .page-shell {
+  .page-shell,
+  .proof-path,
+  .comparison,
+  .next-steps {
     padding: 58px 18px;
   }
 
@@ -774,7 +876,10 @@ textarea {
 
   .process,
   .deliverable-grid,
-  .use-case-grid {
+  .use-case-grid,
+  .proof-steps,
+  .comparison-grid,
+  .trace-example {
     grid-template-columns: 1fr;
   }
 
@@ -804,6 +909,9 @@ textarea {
   .use-case-band,
   .use-case-grid,
   .mini-outcomes,
+  .proof-steps,
+  .comparison-grid,
+  .trace-example,
   .report-body,
   .report-body section,
   .finding-list,
@@ -816,14 +924,20 @@ textarea {
   }
 
   .use-case-band h2,
-  .report-body h2 {
+  .report-body h2,
+  .proof-path h2,
+  .comparison h2,
+  .next-steps h2 {
     max-width: 10ch;
     font-size: 31px;
     line-height: 1.05;
   }
 
   .use-case-grid article,
-  .mini-outcomes div {
+  .mini-outcomes div,
+  .proof-steps article,
+  .comparison-grid div,
+  .trace-example div {
     width: 100%;
     max-width: 100%;
   }
