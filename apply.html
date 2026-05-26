@@ -45,7 +45,7 @@
         <form id="beta-form" class="beta-form">
           <label>
             Name
-            <input name="name" autocomplete="name" required />
+            <input name="name" autocomplete="name" />
           </label>
           <label>
             Email
@@ -53,15 +53,15 @@
           </label>
           <label>
             Business or agency
-            <input name="business" required />
+            <input name="business" />
           </label>
           <label>
             Website or funnel URL
-            <input name="url" type="url" placeholder="https://..." required />
+            <input name="url" type="text" inputmode="url" placeholder="example.com" />
           </label>
           <label>
             What are you trying to improve?
-            <textarea name="goal" rows="4" required></textarea>
+            <textarea name="goal" rows="4"></textarea>
           </label>
           <label>
             Monthly ad spend range
@@ -103,7 +103,7 @@
           `Website or funnel URL: ${data.get("url")}`,
           `Monthly ad spend range: ${data.get("spend")}`,
           "",
-          "What they want to improve:",
+          "What you want to improve:",
           data.get("goal"),
         ];
         const subject = encodeURIComponent("Synthetic Buyer Lab beta application");

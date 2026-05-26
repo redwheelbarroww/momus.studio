@@ -395,6 +395,7 @@ h3 {
   display: grid;
   gap: 56px;
   max-width: 980px;
+  min-width: 0;
 }
 
 .report-body section,
@@ -414,6 +415,55 @@ h3 {
   font-size: 18px;
   line-height: 1.55;
   overflow-wrap: break-word;
+}
+
+.report-body h2,
+.report-body h3,
+.use-case-band h2,
+.use-case-band h3 {
+  overflow-wrap: anywhere;
+}
+
+.use-case-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(26px, 5vw, 64px);
+  align-items: start;
+  margin-bottom: 56px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.use-case-band h2 {
+  font-size: clamp(30px, 4vw, 54px);
+}
+
+.use-case-grid,
+.mini-outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.use-case-grid article,
+.mini-outcomes div {
+  min-width: 0;
+  padding: 20px;
+  background: #fbfaf7;
+}
+
+.use-case-grid p,
+.mini-outcomes p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.mini-outcomes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 24px;
 }
 
 .finding-list {
@@ -645,7 +695,12 @@ textarea {
   }
 
   .method-grid,
-  .two-column {
+  .two-column,
+  .use-case-band {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-outcomes {
     grid-template-columns: 1fr;
   }
 
@@ -718,7 +773,8 @@ textarea {
   }
 
   .process,
-  .deliverable-grid {
+  .deliverable-grid,
+  .use-case-grid {
     grid-template-columns: 1fr;
   }
 
@@ -740,8 +796,36 @@ textarea {
   .report-body section,
   .form-section,
   .principles,
-  .text-page section {
+  .text-page section,
+  .use-case-band {
     padding: 22px;
+  }
+
+  .use-case-band,
+  .use-case-grid,
+  .mini-outcomes,
+  .report-body,
+  .report-body section,
+  .finding-list,
+  .finding-list article,
+  .deliverable-grid,
+  .quote-stack,
+  blockquote {
+    width: min(100%, 340px);
+    max-width: 340px;
+  }
+
+  .use-case-band h2,
+  .report-body h2 {
+    max-width: 10ch;
+    font-size: 31px;
+    line-height: 1.05;
+  }
+
+  .use-case-grid article,
+  .mini-outcomes div {
+    width: 100%;
+    max-width: 100%;
   }
 
   .finding-list article {
