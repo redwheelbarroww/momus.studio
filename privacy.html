@@ -9,6 +9,7 @@
       content="Privacy and data-handling notes for Momus Studio beta audits."
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./analytics.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -64,9 +65,9 @@
       <section>
         <h2>Tracking</h2>
         <p>
-          The first static site does not require invasive tracking. If analytics or ad pixels are
-          added, events should be limited to generic funnel actions such as page views, CTA clicks,
-          form starts, and form submissions.
+          The site measures generic funnel actions such as page views, CTA clicks, sample-report
+          clicks, form starts, and email application opens. Campaign links may use UTM parameters to
+          understand which ads or sources produced interest.
         </p>
       </section>
     </main>

@@ -9,6 +9,7 @@
       content="Apply for a Momus Studio Synthetic Buyer Lab beta audit."
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./analytics.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -74,7 +75,7 @@
               <option value="$20k+">$20k+</option>
             </select>
           </label>
-          <button class="button primary" type="submit">Send application</button>
+          <button class="button primary" type="submit" data-event="form_submit_click" data-label="application mailto">Send application</button>
           <p class="form-note" id="form-note" role="status"></p>
         </form>
       </section>
@@ -123,6 +124,15 @@
         ];
         const subject = encodeURIComponent("Synthetic Buyer Lab beta application");
         const body = encodeURIComponent(lines.join("\n"));
+        window.momusTrack?.("form_submit", {
+          form_id: "beta-form",
+          has_name: Boolean(data.get("name")),
+          has_business: Boolean(data.get("business")),
+          has_url: Boolean(data.get("url")),
+          has_goal: Boolean(data.get("goal")),
+          spend: data.get("spend"),
+        });
+        window.momusTrack?.("email_open", { destination: "momusresearch@gmail.com" });
         window.location.href = `mailto:momusresearch@gmail.com?subject=${subject}&body=${body}`;
         note.textContent = "Opening your email app with the application details.";
       });
