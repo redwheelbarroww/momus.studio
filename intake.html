@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Client Intake | Momus Studio</title>
+    <meta
+      name="description"
+      content="Momus Studio client intake for Synthetic Buyer Lab beta projects."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Momus Studio home">
+        <span class="brand-mark">M</span>
+        <span>Momus Studio</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./case-study.html">Case study</a>
+        <a href="./sample-report.html">Sample</a>
+        <a href="./method.html">Method</a>
+        <a href="./paid-traffic.html">Ads</a>
+        <a href="./apply.html">Apply</a>
+      </nav>
+    </header>
+
+    <main class="page-shell split-page intake-page">
+      <section class="page-hero compact-hero">
+        <p class="eyebrow">Client intake</p>
+        <h1>Send the context needed to run your Synthetic Buyer Lab.</h1>
+        <p class="lede">
+          This page is for scoped beta projects. The intake opens an email draft with the fields
+          Momus Studio needs to confirm the run: funnel, offer, buyer, competitors, traffic source,
+          and known objections.
+        </p>
+      </section>
+
+      <section class="form-section" aria-labelledby="intake-title">
+        <div>
+          <p class="section-label">Project details</p>
+          <h2 id="intake-title">One funnel, one offer, one decision.</h2>
+          <p>
+            Fill in what you know now. If a field is uncertain, write your best current answer.
+          </p>
+        </div>
+        <form id="client-intake-form" class="beta-form">
+          <label>
+            Contact name
+            <input name="contact_name" autocomplete="name" required />
+          </label>
+          <label>
+            Contact email
+            <input name="contact_email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Business or agency
+            <input name="business_name" required />
+          </label>
+          <label>
+            Website
+            <input name="website" type="text" inputmode="url" placeholder="example.com" />
+          </label>
+          <label>
+            Funnel or landing page URL
+            <input name="funnel_url" type="text" inputmode="url" placeholder="example.com/page" required />
+          </label>
+          <label>
+            Offer
+            <textarea name="offer" rows="3" required></textarea>
+          </label>
+          <label>
+            Target buyer
+            <textarea name="target_buyer" rows="3" required></textarea>
+          </label>
+          <label>
+            Conversion goal
+            <input name="conversion_goal" placeholder="Book a call, buy, start trial, request quote" required />
+          </label>
+          <label>
+            Main traffic source
+            <select name="traffic_source">
+              <option value="Meta ads">Meta ads</option>
+              <option value="Google Search ads">Google Search ads</option>
+              <option value="LinkedIn ads">LinkedIn ads</option>
+              <option value="Organic social">Organic social</option>
+              <option value="Email">Email</option>
+              <option value="Referral/direct">Referral/direct</option>
+              <option value="Mixed or unsure">Mixed or unsure</option>
+            </select>
+          </label>
+          <label>
+            Current monthly ad spend
+            <select name="monthly_ad_spend">
+              <option value="Not running ads yet">Not running ads yet</option>
+              <option value="$1k-$5k">$1k-$5k</option>
+              <option value="$5k-$20k">$5k-$20k</option>
+              <option value="$20k-$50k">$20k-$50k</option>
+              <option value="$50k+">$50k+</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </label>
+          <label>
+            Competitors or alternatives
+            <textarea
+              name="competitors"
+              rows="4"
+              placeholder="Add up to three names/URLs. Include alternatives buyers compare against, even if they are not direct competitors."
+            ></textarea>
+          </label>
+          <label>
+            Known objections
+            <textarea name="known_objections" rows="4" placeholder="What do buyers doubt, ask, compare, or misunderstand?"></textarea>
+          </label>
+          <label>
+            Strongest claims or proof
+            <textarea name="strongest_claims" rows="4" placeholder="Results, testimonials, guarantees, case studies, differentiators, or proof points."></textarea>
+          </label>
+          <label>
+            What should this report help you decide?
+            <textarea name="decision" rows="4" required></textarea>
+          </label>
+          <button
+            class="button primary"
+            type="submit"
+            data-event="client_intake_submit_click"
+            data-label="client intake mailto"
+          >
+            Send intake
+          </button>
+          <p class="form-note" id="intake-note" role="status"></p>
+        </form>
+      </section>
+
+      <section class="next-steps" aria-labelledby="after-intake-title">
+        <p class="section-label">After intake</p>
+        <h2 id="after-intake-title">Momus Studio confirms the run before generating traces.</h2>
+        <ol>
+          <li>The submitted details are checked against the agreed beta scope.</li>
+          <li>Momus Studio confirms the final funnel, offer, buyer, and competitor set.</li>
+          <li>The Synthetic Buyer Lab run starts after payment and intake are complete.</li>
+          <li>The report is delivered in 3 to 5 business days after the confirmed start.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Momus Studio</span>
+      <nav aria-label="Footer navigation">
+        <a href="./case-study.html">Case study</a>
+        <a href="./sample-report.html">Sample report</a>
+        <a href="./method.html">Method</a>
+        <a href="./paid-traffic.html">Ads page</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </footer>
+
+    <script>
+      const intakeForm = document.querySelector("#client-intake-form");
+      const intakeNote = document.querySelector("#intake-note");
+
+      function normalizeUrl(value) {
+        const trimmed = String(value || "").trim();
+        if (!trimmed) return "";
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+      }
+
+      intakeForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(intakeForm);
+        const website = normalizeUrl(data.get("website"));
+        const funnelUrl = normalizeUrl(data.get("funnel_url"));
+        const lines = [
+          "Synthetic Buyer Lab client intake",
+          "",
+          `Contact name: ${data.get("contact_name")}`,
+          `Contact email: ${data.get("contact_email")}`,
+          `Business or agency: ${data.get("business_name")}`,
+          `Website: ${website}`,
+          `Funnel or landing page URL: ${funnelUrl}`,
+          "",
+          `Offer: ${data.get("offer")}`,
+          "",
+          `Target buyer: ${data.get("target_buyer")}`,
+          `Conversion goal: ${data.get("conversion_goal")}`,
+          `Main traffic source: ${data.get("traffic_source")}`,
+          `Current monthly ad spend: ${data.get("monthly_ad_spend")}`,
+          "",
+          "Competitors or alternatives:",
+          data.get("competitors"),
+          "",
+          "Known objections:",
+          data.get("known_objections"),
+          "",
+          "Strongest claims or proof:",
+          data.get("strongest_claims"),
+          "",
+          "What this report should help decide:",
+          data.get("decision"),
+        ];
+        const subject = encodeURIComponent("Synthetic Buyer Lab client intake");
+        const body = encodeURIComponent(lines.join("\n"));
+        window.momusTrack?.("client_intake_submit", {
+          form_id: "client-intake-form",
+          has_website: Boolean(website),
+          has_competitors: Boolean(data.get("competitors")),
+          traffic_source: data.get("traffic_source"),
+          monthly_ad_spend: data.get("monthly_ad_spend"),
+        });
+        window.momusTrack?.("email_open", { destination: "momusresearch@gmail.com" });
+        window.location.href = `mailto:momusresearch@gmail.com?subject=${subject}&body=${body}`;
+        intakeNote.textContent = "Opening your email app with the intake details.";
+      });
+    </script>
+  </body>
+</html>
