@@ -1264,6 +1264,10 @@ textarea {
   }
 
   .use-case-band h2,
+  .intro h2,
+  .fit h2,
+  .deliverables h2,
+  .closing h2,
   .report-body h2,
   .proof-path h2,
   .comparison h2,
