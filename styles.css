@@ -362,6 +362,20 @@ h3 {
   background: var(--panel);
 }
 
+.research-note {
+  margin-top: 0;
+  background: #fbfaf7;
+}
+
+.research-note > * {
+  min-width: 0;
+}
+
+.research-note > p {
+  max-width: 760px;
+  overflow-wrap: anywhere;
+}
+
 .case-promo p,
 .case-summary > p {
   color: #3f443f;
@@ -426,6 +440,14 @@ h3 {
 .case-table-section h2,
 .case-trace h2 {
   margin-bottom: 26px;
+}
+
+.table-intro {
+  max-width: 780px;
+  margin-bottom: 24px;
+  color: #3f443f;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .case-trace-grid,
@@ -1214,6 +1236,7 @@ textarea {
   }
 
   .use-case-band,
+  .case-promo,
   .use-case-grid,
   .mini-outcomes,
   .proof-steps,

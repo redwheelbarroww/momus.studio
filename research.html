@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research | Momus Studio</title>
+    <meta
+      name="description"
+      content="Momus Studio independent research on synthetic audits, AI advice systems, and algorithmic ethnography."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Momus Studio home">
+        <span class="brand-mark">M</span>
+        <span>Momus Studio</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./case-study.html">Case study</a>
+        <a href="./sample-report.html">Sample</a>
+        <a href="./research.html">Research</a>
+        <a href="./method.html">Method</a>
+        <a href="./paid-traffic.html">Ads</a>
+        <a href="./apply.html">Apply</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero case-hero">
+        <p class="eyebrow">Independent research</p>
+        <h1>Do AI advice systems change their answers when identity signals change?</h1>
+        <p class="lede">
+          Momus audited 895 single-turn advice responses across three commercial LLMs,
+          five high-stakes decision scenarios, and six controlled demographic-signal bundles.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="./apply.html">Use this method on a funnel</a>
+          <a class="button secondary" href="./method.html">Read the commercial method</a>
+        </div>
+      </section>
+
+      <section class="case-promo research-note" aria-label="Working paper status">
+        <div>
+          <p class="section-label">Working paper 001</p>
+          <h2>A public methods note from the same evidence discipline behind Synthetic Buyer Lab.</h2>
+        </div>
+        <p>
+          This release is intentionally conservative. It shows the audit design, response volume,
+          and early statistical signals while keeping stronger disparity claims behind the remaining
+          review gates: inter-rater reliability, human spot-check, and methodology certification.
+        </p>
+      </section>
+
+      <section class="case-metrics" aria-label="Working paper metrics">
+        <div>
+          <span>895</span>
+          <p>Captured and signed model responses</p>
+        </div>
+        <div>
+          <span>3</span>
+          <p>Commercial LLMs included in the audit</p>
+        </div>
+        <div>
+          <span>5</span>
+          <p>High-stakes advice scenarios tested</p>
+        </div>
+        <div>
+          <span>15</span>
+          <p>Nominal p &lt; 0.05 tested cells before certification</p>
+        </div>
+      </section>
+
+      <section class="case-summary">
+        <div>
+          <p class="section-label">Working paper 001</p>
+          <h2>Measured sensitivity, not a final allegation.</h2>
+        </div>
+        <p>
+          The current evidence supports a narrow claim: in a controlled single-turn setting,
+          some commercial LLM advice outputs were measurably sensitive to explicit demographic
+          identity declarations, even when the underlying question was held constant.
+        </p>
+      </section>
+
+      <section class="proof-path" aria-label="Research scope">
+        <div>
+          <p class="section-label">What was tested</p>
+          <h2>Same question. Different declared identity context.</h2>
+        </div>
+        <div class="proof-steps">
+          <article>
+            <span>Domains</span>
+            <p>Salary negotiation, mortgage rejection, chest pain, landlord dispute, and investing a windfall.</p>
+          </article>
+          <article>
+            <span>Controls</span>
+            <p>Prompt wording, fresh context, model settings, and decision scenario were held constant.</p>
+          </article>
+          <article>
+            <span>Evidence</span>
+            <p>Responses were captured with request, manifest, hash, and signature files.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-table-section">
+        <p class="section-label">Early signals</p>
+        <h2>Variation appeared in multiple models and domains.</h2>
+        <p class="table-intro">
+          These are examples from the initial analysis, not final harm claims. They are useful because
+          they show where the protocol detected response sensitivity worth reviewing more deeply.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Model</th>
+                <th>Observed variation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mortgage rejection</td>
+                <td>claude-opus-4-6</td>
+                <td>Whether the response mentioned fair-lending laws.</td>
+              </tr>
+              <tr>
+                <td>Chest pain</td>
+                <td>gemini-2.5-pro</td>
+                <td>Whether the response mentioned anxiety or panic.</td>
+              </tr>
+              <tr>
+                <td>Landlord dispute</td>
+                <td>gpt-4o</td>
+                <td>Whether the response mentioned tenant-rights organizations.</td>
+              </tr>
+              <tr>
+                <td>Salary negotiation</td>
+                <td>gemini-2.5-pro</td>
+                <td>Whether the response cited risk of a rescinded offer.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="case-recommendations">
+        <div>
+          <p class="section-label">Limits</p>
+          <h2>What this paper cannot conclude yet.</h2>
+        </div>
+        <div class="case-list">
+          <article>
+            <h3>Not a legal discrimination claim</h3>
+            <p>The analysis does not assert motive, intent, or legal discrimination by any vendor.</p>
+          </article>
+          <article>
+            <h3>Single-turn only</h3>
+            <p>The audit measures cold-start behavior, not how models behave in longer conversations.</p>
+          </article>
+          <article>
+            <h3>Explicit identity disclosure</h3>
+            <p>The study tests declared identity context, not natural demographic inference.</p>
+          </article>
+          <article>
+            <h3>Certification pending</h3>
+            <p>IRR, human spot-check, and methodology certification must finish before stronger claims.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing">
+        <p class="section-label">Commercial application</p>
+        <h2>The same research discipline powers Synthetic Buyer Lab.</h2>
+        <p>
+          Momus Studio uses controlled cohorts, coded traces, and careful caveats to help marketers
+          understand how buyers interpret funnels, offers, competitors, and campaign pages.
+        </p>
+        <a class="button primary" href="./apply.html">Apply for a beta audit</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Momus Studio</span>
+      <nav aria-label="Footer navigation">
+        <a href="./case-study.html">Case study</a>
+        <a href="./sample-report.html">Sample report</a>
+        <a href="./research.html">Research</a>
+        <a href="./method.html">Method</a>
+        <a href="./paid-traffic.html">Ads page</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </footer>
+  </body>
+</html>
