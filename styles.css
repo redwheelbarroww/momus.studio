@@ -736,6 +736,88 @@ h3 {
   padding-bottom: 36px;
 }
 
+.compact-hero h1 {
+  font-size: clamp(44px, 5.8vw, 76px);
+}
+
+.hero-summary {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: #3d423f;
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.45;
+}
+
+.audit-brief {
+  max-width: 720px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.audit-brief ul {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audit-brief li {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  padding: 20px 24px 20px 54px;
+  border-bottom: 1px solid var(--line);
+}
+
+.audit-brief li::before {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  width: 10px;
+  height: 10px;
+  background: var(--green);
+  content: "";
+}
+
+.audit-brief li strong {
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.audit-brief li span {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.audit-brief-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px 18px 24px;
+  background: #fbfaf7;
+}
+
+.audit-brief-footer p {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+}
+
+.audit-brief-footer p span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.audit-brief-footer p strong {
+  font-size: 28px;
+  line-height: 1;
+}
+
 .report-layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -1192,6 +1274,26 @@ textarea {
   .page-hero h1 {
     max-width: 9ch;
     font-size: 36px;
+  }
+
+  .hero-summary,
+  .audit-brief {
+    width: min(100%, 340px);
+    max-width: 340px;
+  }
+
+  .audit-brief li {
+    padding: 18px 18px 18px 46px;
+  }
+
+  .audit-brief li::before {
+    top: 21px;
+    left: 20px;
+  }
+
+  .audit-brief-footer {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .process,
